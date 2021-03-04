@@ -1,0 +1,19 @@
+{
+  "name": "full-website-photography",
+  "version": "1.0.0",
+  "description": "complete website for selling photography equipment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "author": "Tomas Guardo",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
