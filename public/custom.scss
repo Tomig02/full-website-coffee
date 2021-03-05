@@ -1,0 +1,88 @@
+
+$primary: #b0997d;
+$secondary: #ffffff;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face{
+    font-family: 'Windsong';
+    src: url("./DianaWebberScript.ttf");
+}
+
+nav{
+    background: linear-gradient(rgba(0, 0, 0, 0.4) 50%, transparent) ;
+    color: white;
+}
+.custom-bg{
+    background: rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.script{
+    font-family: 'Windsong', cursive;
+}
+
+.custom-bg-video{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    height: inherit;
+    overflow: hidden;
+    z-index: -1;
+}
+.custom-bg-video video{
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 200%;
+    max-height: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.link-custom{
+    text-decoration: none;
+    color: #b0997d;
+    position: relative;
+}
+.link-custom::after{
+    content: "";
+    position: absolute;
+    bottom: -15%;
+    right: -15%;
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.2s ease;
+}
+.link-custom:hover{
+    color: white;
+    text-decoration: none;
+}
+.link-custom:hover::after{
+    width: 120%;
+    height: 120%;
+    transform: translate(-10%, -10%);
+    background: #b0997d;
+    border-radius: 1em;
+    z-index: -1;
+}
+
+@media (min-width: 1000px){
+    html{
+        font-size: 1.2em
+    }
+}
+@media (min-width: 2000px){
+    html{
+        font-size: 3em
+    }
+}
+@media (min-width: 3000px){
+    html{
+        font-size: 4.8em
+    }
+}

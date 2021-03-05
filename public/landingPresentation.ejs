@@ -1,0 +1,27 @@
+<% if(variant === "with-bg"){ %>
+    <div class="p-5 bg-primary d-lg-flex">
+        <div class="my-lg-1 col-12 col-lg-7 p-0 position-relative rounded-3 shadow">
+            <img class="w-100 rounded-3" src=<%- img %> alt="" >
+            <div class="w-50 h-75 shadow rounded-circle overflow-hidden position-absolute bottom-0 end-0 m-2">
+                <img class="w-100 h-100 rounded-3" src=<%- imgSec %> alt="">
+            </div>
+        </div>
+        <div class="px-4 col-12 col-lg-5 text-center d-flex flex-column justify-content-center align-items-center">
+            <h3 class="my-3 text-secondary script fs-1"><%- text %></h3>
+            <p class="text-secondary fs-6"><%- subText %></p>
+        </div>
+    </div>
+<% } else{ %>
+    <div class="p-5 bg-secondary d-lg-flex flex-row-reverse">
+        <div class="my-lg-1 col-12 col-lg-7 p-0 position-relative rounded-3 rounded-lg-5 shadow">
+            <img class="w-100 rounded-3" src=<%- img %> alt="">
+            <div class="w-50 h-75 rounded-circle overflow-hidden shadow position-absolute bottom-0 start-0 m-2">
+                <img class="w-100 h-100" src=<%- imgSec %> alt="" >
+            </div>
+        </div>
+        <div class="px-4 col-12 col-lg-5 text-center d-flex flex-column justify-content-center">
+            <h3 class="my-3 script fs-1"><%- text %></h3>
+            <p class="fs-6"><%- subText %></p>
+        </div>
+    </div>
+<% } %>
