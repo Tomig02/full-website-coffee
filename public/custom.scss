@@ -9,8 +9,19 @@ $secondary: #ffffff;
     src: url("./DianaWebberScript.ttf");
 }
 
+.btn{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn-secondary{
+    &:hover{
+        background: red;
+        color: white;
+    }
+}
+
 nav{
-    background: linear-gradient(rgba(0, 0, 0, 0.4) 50%, transparent) ;
+    background: linear-gradient(rgba(0, 0, 0, 0.6) 50%, transparent) ;
     color: white;
 }
 .custom-bg{
@@ -20,7 +31,7 @@ nav{
     color: white;
 }
 .script{
-    font-family: 'Windsong', cursive;
+    font-family: 'Windsong', sans-serif;
 }
 
 .custom-bg-video{
@@ -30,59 +41,80 @@ nav{
     height: inherit;
     overflow: hidden;
     z-index: -1;
-}
-.custom-bg-video video{
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 200%;
-    max-height: 200%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    video{
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 200%;
+        max-height: 200%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
 
 .link-custom{
     text-decoration: none;
+    text-transform: uppercase;
     color: #b0997d;
     position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -15%;
+        right: -15%;
+        height: 0.5em;
+        width: 0.5em;
+        border-radius: 50%;
+        background: white;
+        transition: all 0.2s ease;
+    }
+    &:hover{
+        color: white;
+        text-decoration: none;
+        &::after{
+            width: 120%;
+            height: 120%;
+            transform: translate(-10%, -10%);
+            background: #b0997d;
+            border-radius: 1em;
+            z-index: -1;
+        }
+    }
 }
-.link-custom::after{
-    content: "";
-    position: absolute;
-    bottom: -15%;
-    right: -15%;
-    height: 0.5em;
-    width: 0.5em;
-    border-radius: 50%;
-    background: white;
-    transition: all 0.2s ease;
+
+.bottom-25{
+    bottom: 25%;
 }
-.link-custom:hover{
-    color: white;
-    text-decoration: none;
+
+.position-img-1{
+    opacity: 0.7;
+    bottom: 12%;
+    left: 8%;
+    z-index: -1;
 }
-.link-custom:hover::after{
-    width: 120%;
-    height: 120%;
-    transform: translate(-10%, -10%);
-    background: #b0997d;
-    border-radius: 1em;
+.position-img-2{
+    opacity: 0.7;
+    bottom: 10%;
+    right: 10%;
+    z-index: -1;
+}
+.position-img-3{
+    opacity: 0.7;
+    bottom: 20%;
+    left: 4%;
     z-index: -1;
 }
 
-@media (min-width: 1000px){
-    html{
+html{
+    font-size: 1em;
+    @media (min-width: 1000px){
         font-size: 1.2em
     }
-}
-@media (min-width: 2000px){
-    html{
+    @media (min-width: 2000px){
         font-size: 3em
     }
-}
-@media (min-width: 3000px){
-    html{
+    @media (min-width: 3000px){
         font-size: 4.8em
     }
 }
