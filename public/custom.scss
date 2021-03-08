@@ -15,8 +15,17 @@ $secondary: #ffffff;
 }
 .btn-secondary{
     &:hover{
-        background: red;
+        background: $dark;
         color: white;
+    }
+}
+.btn-special{
+    background: $dark;
+    color: $light;
+    &:hover{
+        background: transparent;
+        color: $dark;
+        border: 1px solid $dark;
     }
 }
 
@@ -44,8 +53,6 @@ nav{
     video{
         min-width: 100%;
         min-height: 100%;
-        max-width: 200%;
-        max-height: 200%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -60,9 +67,12 @@ nav{
     position: relative;
     &::after{
         content: "";
+        pointer-events: none;
         position: absolute;
-        bottom: -15%;
-        right: -15%;
+        bottom: -50%;
+        left: 0;
+        right: 0;
+        margin: auto;
         height: 0.5em;
         width: 0.5em;
         border-radius: 50%;
@@ -75,7 +85,7 @@ nav{
         &::after{
             width: 120%;
             height: 120%;
-            transform: translate(-10%, -10%);
+            transform: translate(-8%, -30%);
             background: #b0997d;
             border-radius: 1em;
             z-index: -1;

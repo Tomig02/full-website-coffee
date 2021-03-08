@@ -7,10 +7,10 @@
 </header>
 
 <main>
-    <section id="information">
+    <section>
 
         <!-- first card presentation element -->
-        <%- include("./landingPresentation", {
+        <%- include("./elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
             img: "./media/baked-goods_compressed.jpg", 
@@ -19,7 +19,7 @@
         }) %>
 
         <!-- second card presentation element -->
-        <%- include("./landingPresentation", {
+        <%- include("./elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
             img: "./media/coffe-beans_compressed.jpg", 
@@ -28,7 +28,7 @@
         }) %>
 
         <!-- third card presentation element -->
-        <%- include("./landingPresentation", {
+        <%- include("./elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
             img: "./media/coffee-shop_compressed.jpg", 
@@ -36,6 +36,18 @@
             variant: "with-bg"
         }) %>
     </section>
-
+    <section>
+        <div class="row">
+            <div class="col-sm-6 h-50 p-5 text-center align-middle bg-dark text-light">
+                <p class="fs-4">If you want to now more about us, what we do, and wath we want to do?</p>
+                <button class="btn btn-secondary">Read our story</button>
+            </div>
+            
+            <div class="col-sm-6 h-50 p-5 text-center bg-secondary">
+                <p class="fs-4">If you want to know our plans, make a reservation or a question?</p>
+                <button class="btn btn-special">Contact us</button>
+            </div>
+        </div>
+    </section>
     
 </main>

@@ -1,0 +1,28 @@
+<header class="p-5">
+    <h1 class="text-center m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatum? Autem doloremque repellat odio iste!</h1>
+</header>
+<main>
+    <form id="contact-form" class=" form-control container d-flex flex-column align-items-center w-50 my-5 shadow">
+        <div class="row w-100 justify-content-between my-3">
+            <div class="col-5 p-0">
+                <label class="form-label fw-bold" for="name">Name</label>
+                <input class="w-100 form-control" type="text" name="name" id="name">
+            </div>
+            <div class="col-5 p-0">
+                <label class="form-label fw-bold" for="surname">Surname</label>
+                <input class="w-100 form-control" type="text" name="surname" id="surname">
+            </div>
+        </div>
+        <div class="w-100 my-3">
+            <label class="form-label fw-bold" for="email">Email</label>
+            <input class="w-100 form-control" type="email" name="email" id="email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="w-100 my-3">
+            <label class="form-label fw-bold" for="message">Message</label>
+            <textarea class="w-100 form-control" name="message" id="message" maxlength="200" rows="4"></textarea>
+            <small class="form-text text-muted">200 characters is the maximum length</small>
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Send</button>
+    </form>
+</main>
