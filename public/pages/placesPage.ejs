@@ -1,21 +1,22 @@
-<header>
-    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+<header class="h-100 p-5 bg-dark text-light d-flex align-items-center text-center">
+    <h1 class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
         Officia, nobis sint iste illum eligendi vero?</h1>
 </header>
 <main>
     
-    <div class="h-100 w-100 d-flex align-items-center justify-content-center">
+    <div class="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
         <!-- here will be rendered the map -->
-        <div id="googleMap" class="h-75 col-10 col-md-8 p-0"></div>    
+        <div id="googleMap" class="h-100 col-11 col-md-8 p-0 position-relative bottom-25"></div>
+        <small class="mt-2 position-relative bottom-25">select a location to see the details</small> 
     </div>
 
-    <!-- array of branches to be displayed when their location is selected in the map -->
+    <!--  creates locations to be displayed when their marker is selected in the map -->
     <div id="sucursales">
         <%  for(let i = 0; i < branches.length; i++){ %>
 
-            <div class="d-flex align-items-center bg-primary h-100 w-100 px-5 d-none">
-                <img class="col-6 h-50 rounded-3" src=<%- branches[i].img %> alt="">
-                <div class="col-6 text-center p-5">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center bg-primary w-100 p-5 d-none">
+                <img class="col-10 col-md-6 rounded-3" src=<%- branches[i].img %> alt="">
+                <div class="col-12 col-md-6 text-center px-2 pt-3">
                     <h2 class="fw-bold"><%- branches[i].name %></h2>
                     <p><span class="fw-bold">Direction:</span><%- branches[i].dir %></p>
                     <p><span class="fw-bold">Description:</span><%- branches[i].desc %></p>
@@ -24,9 +25,11 @@
 
         <% } %>
     </div>
+
+    <!--create the map and add the markers using the lat and lng 
+        from the locations array fetched in server -->
     <script>
         const branches = JSON.parse('<%- JSON.stringify(branches) %>');
-        console.log(branches);
     </script>
     <script src="../javaScript/google-maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDELnM1WTLTY8P_W1h2HkqS7u47gFAKHgc&callback=initMap"></script>

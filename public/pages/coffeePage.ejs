@@ -24,109 +24,53 @@
     </div>
 </header>
 <main>
+
     <div class="d-flex align-items-center mt-5">
         <hr class="col-4 p-0"/>
         <h2 class="col-4 p-0 text-uppercase text-center">New Products</h2>
         <hr class="col-4 p-0"/>
     </div>
 
+    <%  const newProd = products.slice(0, 3);
+        const otherProd = products.slice(4, products.length);
+    %>
+
+    <!-- this part displays the elements from the new products array -->
     <div class="row flex-column flex-md-row justify-content-around align-items-center px-2 m-0">
 
-        <%- include("../elements/cardBgBuy", {
-            bg: "bg-primary",
-            img: "../media/coffee-bag.png",
-            shadow: "shadow",
-            title: "Lorem, ipsum dolor.",
-            btn: "btn-secondary"
-        }) %>
-
-        <%- include("../elements/cardBgBuy", {
-            bg: "bg-primary",
-            img: "../media/coffee-bag.png",
-            shadow: "shadow",
-            title: "Lorem, ipsum dolor.",
-            btn: "btn-secondary"
-        }) %>
-
-        <%- include("../elements/cardBgBuy", {
-            bg: "bg-primary",
-            img: "../media/coffee-bag.png",
-            shadow: "shadow",
-            title: "Lorem, ipsum dolor.",
-            btn: "btn-secondary"
-        }) %>
+        <% newProd.forEach(item => { %>
+            <div class="col-8 col-md-3 my-3 p-4 rounded-3 text-center bg-primary shadow">
+                <img src=<%- item.img %> alt="" class="card-img w-75 m-auto"></img>
+                <h3 class="card-title my-2"><%- item.title  %></h3>
+                <p class="text-center"><%- item.desc %></p>
+                <div class="text-start d-flex justify-content-around">
+                    <p><span class="fw-bold">Flavor:</span><%- item.flavor %></p>
+                    <p><span class="fw-bold">Price:</span> <%- item.price %> </p>
+                </div>
+                
+                <button class="btn btn-secondary mt-2">Buy</button>
+            </div>
+        <% }); %>
     </div>
 
     <hr/>
+
     <div class="container-fluid h-auto my-5">
         <div class="row h-50 h-auto justify-content-around p-0 my-3 mx-0">
 
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-        </div>
-
-        <div class="row justify-content-around p-0 my-3 mx-0">
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
-
-            <%- include("../elements/cardBgBuy", {
-                bg: "",
-                img: "../media/coffee-bag.png",
-                shadow: "",
-                title: "Lorem, ipsum dolor.",
-                btn: "btn-primary"
-            }) %>
+            <% otherProd.forEach(item => { %>
+                <div class="col-8 col-sm-6 col-md-3 my-3 p-4 rounded-3 text-center">
+                    <img src=<%- item.img %> alt="" class="card-img w-75 m-auto"></img>
+                    <h3 class="card-title my-2"><%- item.title  %></h3>
+                    <p class="text-center"><%- item.desc %></p>
+                    <div class="text-start d-flex justify-content-around">
+                        <p><span class="fw-bold">Flavor:</span> <%- item.flavor %></p>
+                        <p><span class="fw-bold">Price:</span> <%- item.price %> </p>
+                    </div>
+                    
+                    <button class="btn btn-primary mt-2">Buy</button>
+                </div>
+            <% }); %>
         </div>
     </div>
 </main>

@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const Branch = require("./schema/branch");
 require("dotenv/config")
+
+const Branch = require("./schema/branch");
+const Product = require("./schema/product");
 
 const server = express();
 
@@ -18,7 +20,7 @@ server.use(express.urlencoded({
 }))
 
 // MongoDB Atlas connection with mongoose
-mongoose.connect(process.env.MONGO-AUTH, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_AUTH, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // wait for connection to get data of coffee shops from database when inside placesPage.js
 const database = mongoose.connection;
@@ -33,8 +35,20 @@ server.get("/", (req, res) => {
     res.render("mainSite", {page: __dirname + "/public/pages/landingPage.ejs"});
 });
 
-server.get("/cafe", (req, res) => {
-    res.render("mainSite", {page: __dirname + "/public/pages/coffeePage.ejs"})
+let products;
+server.get("/cafe", async (req, res) => {
+    try{
+        if(!products){
+            products = await Product.find();
+        } 
+    }
+    catch(err){
+        console.log(err);
+    }
+    res.render("mainSite", {
+        page: __dirname + "/public/pages/coffeePage.ejs",
+        products: products
+    });
 });
 
 server.get("/conocenos", (req, res) => {
@@ -45,8 +59,16 @@ server.get("/contacto", (req, res) => {
     res.render("mainSite", {page: __dirname + "/public/pages/contactPage.ejs"})
 });
 
-server.get("/sucursales", async (req, res) => { 
-    branches = await Branch.find();
+let branches;
+server.get("/sucursales", async (req, res) => {
+    try{
+        if(!branches){
+            branches = await Branch.find();
+        } 
+    }
+    catch(err){
+        console.log(err);
+    }
     res.render("mainSite", {
         page: __dirname + "/public/pages/placesPage.ejs",
         branches: branches
