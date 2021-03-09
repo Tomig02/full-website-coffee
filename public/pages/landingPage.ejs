@@ -1,6 +1,6 @@
 <header class="custom-bg w-100 h-100 d-flex flex-column justify-content-center text-center">
     <div class="custom-bg-video">
-        <video autoplay muted loop src="./media/video-landing_compressed.mp4"></video>
+        <video autoplay muted loop src="../media/video-landing_compressed.mp4"></video>
     </div>
     <h1 class="script mx-auto display-1">Los mejores panes</h1>
     <h2 class="script mx-auto display-4">Como si siempre fueran recien salidos del horno</h2>
@@ -10,29 +10,29 @@
     <section>
 
         <!-- first card presentation element -->
-        <%- include("./elements/landingPresentation", {
+        <%- include("../elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
-            img: "./media/baked-goods_compressed.jpg", 
-            imgSec: "./media/baker-work_compressed.jpg",
+            img: "../media/baked-goods_compressed.jpg", 
+            imgSec: "../media/baker-work_compressed.jpg",
             variant: "with-bg"
         }) %>
 
         <!-- second card presentation element -->
-        <%- include("./elements/landingPresentation", {
+        <%- include("../elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
-            img: "./media/coffe-beans_compressed.jpg", 
-            imgSec: "./media/serving-coffee_compressed.jpg",
+            img: "../media/coffe-beans_compressed.jpg", 
+            imgSec: "../media/serving-coffee_compressed.jpg",
             variant: "no-bg"
         }) %>
 
         <!-- third card presentation element -->
-        <%- include("./elements/landingPresentation", {
+        <%- include("../elements/landingPresentation", {
             text: "Los mejores postres y panificados", 
             subText: "acompaña tu cafe con nuestros productos hechos a mano para conseguir el mwjor sabor y frescura.", 
-            img: "./media/coffee-shop_compressed.jpg", 
-            imgSec: "./media/coffee-home_compressed.jpg",
+            img: "../media/coffee-shop_compressed.jpg", 
+            imgSec: "../media/coffee-home_compressed.jpg",
             variant: "with-bg"
         }) %>
     </section>
@@ -40,12 +40,12 @@
         <div class="row">
             <div class="col-sm-6 h-50 p-5 text-center align-middle bg-dark text-light">
                 <p class="fs-4">If you want to now more about us, what we do, and wath we want to do?</p>
-                <button class="btn btn-secondary">Read our story</button>
+                <a href="/conocenos" class="btn btn-secondary">Read our story</a>
             </div>
             
             <div class="col-sm-6 h-50 p-5 text-center bg-secondary">
                 <p class="fs-4">If you want to know our plans, make a reservation or a question?</p>
-                <button class="btn btn-special">Contact us</button>
+                <a href="/contacto" class="btn btn-special">Contact us</a>
             </div>
         </div>
     </section>
