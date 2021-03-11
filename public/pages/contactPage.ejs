@@ -1,33 +1,13 @@
-<header class="p-5 bg-dark">
-    <h1 class="text-center text-light m-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatum? Autem doloremque repellat odio iste!</h1>
+<header class="h-75 py-5 px-2 bg-dark d-flex flex-column justify-content-center">
+    <h1 class="text-center text-light my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatum? Autem doloremque repellat odio iste!</h1>
 </header>
-<main>
+<main class="d-flex flex-column align-items-center">
 
     <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
 
-    <script>
-        function handleSubmit(){
+    <script src="../javaScript/handleSubmit.js"></script>
 
-            // get data from form to display it in thank you message
-            const form = document.querySelector("#contact-form");
-            const data = new FormData(form);
-            const email = data.get("email");
-            const user = data.get("name") + " " + data.get("surname");
-            console.log(data);
-
-            // add data to message, display it and let the user close it when he
-            // clicks outside of the message
-            const element = document.querySelector("#contact-success");
-            element.querySelector("#email").innerText = email;
-            element.querySelector("#user").innerText = user;
-            element.classList.remove("d-none");
-            element.addEventListener("click", (e) => {
-                e.target.classList.add("d-none");
-            });
-        }
-    </script>
-
-    <form onsubmit="handleSubmit()" action="/send-form" method="POST"  target="dummyframe" id="contact-form" class=" form-control container d-flex flex-column align-items-center w-50 my-5 shadow">
+    <form onsubmit="handleSubmit()" action="/send-form" method="POST"  target="dummyframe" id="contact-form" class=" form-control d-flex flex-column align-items-center w-75 my-5 shadow">
         <div class="row w-100 justify-content-between my-3">
             <div class="col-5 p-0">
                 <label class="form-label fw-bold" for="name">Name</label>
@@ -52,8 +32,8 @@
     </form>
 
     <div class="modal-fullscreen fixed-top d-flex align-items-center bg-darken justify-content-center d-none" id="contact-success">
-        <div class="h-50 w-50 bg-light d-flex flex-column align-items-center justify-content-around p-5 rounded-3">
-            <img class="h-25" src="../media/approval.svg" alt="">
+        <div class=" col-10 col-md-6 bg-light text-center p-5 rounded-3">
+            <img class="col-6 col-md-3 mb-2" src="../media/approval.svg" alt="">
             <h2>Contact Form Submitted!</h2>
             <p>Thank you <span id="user" class="fw-bold"></span>.</p>
             <p>Your message has been sent, and we will send our response to:</p>

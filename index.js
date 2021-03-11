@@ -43,7 +43,7 @@ server.get("/cafe", async (req, res) => {
         } 
     }
     catch(err){
-        console.log(err);
+        console.log(err.errorText);
     }
     res.render("mainSite", {
         page: __dirname + "/public/pages/coffeePage.ejs",

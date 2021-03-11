@@ -10734,8 +10734,29 @@ textarea.form-control-lg {
 }
 @font-face {
   font-family: "Windsong";
-  src: url("./DianaWebberScript.ttf");
+  src: url("./media/DianaWebberScript.ttf");
 }
+.position-img-1 {
+  opacity: 0.7;
+  bottom: 12%;
+  left: 8%;
+  z-index: -1;
+}
+
+.position-img-2 {
+  opacity: 0.7;
+  bottom: 10%;
+  right: 10%;
+  z-index: -1;
+}
+
+.position-img-3 {
+  opacity: 0.7;
+  bottom: 20%;
+  left: 4%;
+  z-index: -1;
+}
+
 .btn {
   font-weight: bold;
   text-transform: uppercase;
@@ -10756,20 +10777,21 @@ textarea.form-control-lg {
   border: 1px solid #212529;
 }
 
-nav {
-  background: linear-gradient(rgba(0, 0, 0, 0.6) 50%, transparent);
-  color: white;
+.bottom-25 {
+  bottom: 25%;
 }
 
-.custom-bg {
-  background: rgba(0, 0, 0, 0.7);
-  background-size: cover;
-  background-position: center;
-  color: white;
+.bg-darken {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .script {
   font-family: "Windsong", sans-serif;
+}
+
+.custom-bg {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
 }
 
 .custom-bg-video {
@@ -10788,14 +10810,36 @@ nav {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+.custom-bg-video img {
+  height: 100vh;
+}
+
+#nav-container, #burger {
+  transition: 0.3s;
+}
+
+#burger {
+  cursor: pointer;
+}
+
+.nav-grad {
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent);
+}
+
+.nav-grad-extend {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.burger-active {
+  transform: rotate(90deg);
+}
 
 .link-custom {
   text-decoration: none;
-  text-transform: uppercase;
   color: #b0997d;
   position: relative;
 }
-.link-custom::after {
+.link-custom::before {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -10813,7 +10857,7 @@ nav {
   color: white;
   text-decoration: none;
 }
-.link-custom:hover::after {
+.link-custom:hover::before {
   width: 120%;
   height: 120%;
   transform: translate(-8%, -30%);
@@ -10822,33 +10866,12 @@ nav {
   z-index: -1;
 }
 
-.bottom-25 {
-  bottom: 25%;
+html, body {
+  height: 100%;
 }
 
-.bg-darken {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.position-img-1 {
-  opacity: 0.7;
-  bottom: 12%;
-  left: 8%;
-  z-index: -1;
-}
-
-.position-img-2 {
-  opacity: 0.7;
-  bottom: 10%;
-  right: 10%;
-  z-index: -1;
-}
-
-.position-img-3 {
-  opacity: 0.7;
-  bottom: 20%;
-  left: 4%;
-  z-index: -1;
+.h-100vh {
+  height: 100vh;
 }
 
 html {

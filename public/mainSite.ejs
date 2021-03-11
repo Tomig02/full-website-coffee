@@ -1,32 +1,48 @@
+<!DOCTYPE HTML>
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./custom.css">
+        <title>Lorem - Coffee shop</title>
+        <meta name="description" content="coffee shop website">
+        <link rel="icon" href="./media/coffee.svg" type="image/x-icon">
     </head>
     <body>
-        <nav class="d-flex align-items-center justify-content-between justify-content-md-around fixed-top px-4 pb-2">
-            <ul class="list-unstyled col-4 col-lg-5 p-0 text-center d-none d-md-flex justify-content-around">
-                <li class="fw-bold"><a class="link-custom text-uppercase" href="/">Home</a></li>
-                <li class="fw-bold"><a class="link-custom text-uppercase" href="/conocenos">About Us</a></li>
-                <li class="fw-bold"><a class="link-custom text-uppercase" href="/panaderia">Food</a></li>
-            </ul>
-
-            <img class="col-4 col-lg-2 p-0" src="./media/logo-5.svg" alt="company logo">
-
-            <ul class="list-unstyled col-4 col-lg-5 p-0 text-center d-none d-md-flex justify-content-around">
-                <li class="fw-bold"><a class="link-custom" href="/cafe">Coffee</a></li>
-                <li class="fw-bold"><a class="link-custom" href="/sucursales">Locations</a></li>
-                <li class="fw-bold"><a class="link-custom" href="/contacto">Contact</a></li>
-            </ul>
-
-            <!-- burger icon svg -->
-            <svg fill="#ffffff" class="d-block col-1 d-md-none" viewBox="0 0 100 80" width="40" height="40">
-                <rect width="100" height="10"></rect>
-                <rect y="30" width="100" height="10"></rect>
-                <rect y="60" width="100" height="10"></rect>
-            </svg>
-        </nav>
+        <div class="fixed-top nav-grad px-4 pb-2" id="nav-container">
+            <nav class="d-flex align-items-center justify-content-between justify-content-md-around">
+    
+                <img class="col-4 col-md-3 col-lg-2 p-0" src="./media/logo-5.svg" alt="company logo">
+    
+                <ul class="list-unstyled col-8 p-0 text-center d-none d-md-flex justify-content-around">
+                    <li class="fw-bold"><a class="link-custom" href="/">Home</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/conocenos">About Us</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/cafe">Coffee</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/sucursales">Locations</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/contacto">Contact</a></li>
+                </ul>
+    
+                <!-- burger icon svg -->
+                <svg class="col-1 d-block d-md-none" id="burger" role="button" fill="#ffffff" class="" viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="10"></rect>
+                    <rect y="30" width="100" height="10"></rect>
+                    <rect y="60" width="100" height="10"></rect>
+                </svg>
+            </nav>
+            <div id="overlay" class="d-flex d-none d-md-none">
+                <ul class="list-unstyled col-6 p-0 text-center">
+                    <li class="fw-bold"><a class="link-custom " href="/">Home</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/conocenos">About Us</a></li>
+                </ul>
+                <ul class="list-unstyled col-6 p-0 text-center">
+                    <li class="fw-bold"><a class="link-custom" href="/cafe">Coffee</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/sucursales">Locations</a></li>
+                    <li class="fw-bold"><a class="link-custom" href="/contacto">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="./javaScript/burger-menu.js"></script>
 
         <%- include(page) %>
 
@@ -36,20 +52,10 @@
                 <img class="col-4 col-md-2 p-0" src="./media/logo-5.svg" alt="">
                 <hr class="col-4 col-md-5 p-0 bg-primary"/>
             </div>
-            <div class="d-sm-flex text-center px-md-2">
-                <div class="col-12 col-sm-6 m-auto text-sm-left">
-                    <p class="text-primary ">link list</p>
-                    <ul class="list-unstyled d-flex text-secondary">
-                        <li class="col-4 p-0">link</li>
-                        <li class="col-4 p-0">link</li>
-                        <li class="col-4 p-0">link</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 px-3">
-                    <p class="text-primary fw-bold w-75 m-auto">To me, the smell of fresh-made 
-                        coffee is one of the greatest inventions.</p>
-                    <p class="text-muted text-right m-0">- Hugh Jackman</p>
-                </div>
+            <div class="col-12 text-center px-3">
+                <p class="text-primary fw-bold w-75 m-auto">To me, the smell of fresh-made 
+                    coffee is one of the greatest inventions.</p>
+                <p class="text-muted text-right m-0">- Hugh Jackman</p>
             </div>
         </footer>
     </body>

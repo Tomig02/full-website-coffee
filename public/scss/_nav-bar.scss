@@ -1,0 +1,50 @@
+
+#nav-container, #burger{
+    transition: 0.3s;
+}
+#burger{
+    cursor: pointer;
+}
+
+.nav-grad{
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent);
+}
+.nav-grad-extend{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.burger-active{
+    transform: rotate(90deg);
+}
+
+.link-custom{
+    text-decoration: none;
+    color: #b0997d;
+    position: relative;
+    &::before{
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        bottom: -50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 0.5em;
+        width: 0.5em;
+        border-radius: 50%;
+        background: white;
+        transition: all 0.2s ease;
+    }
+    &:hover{
+        color: white;
+        text-decoration: none;
+        &::before{
+            width: 120%;
+            height: 120%;
+            transform: translate(-8%, -30%);
+            background: #b0997d;
+            border-radius: 1em;
+            z-index: -1;
+        }
+    }
+}

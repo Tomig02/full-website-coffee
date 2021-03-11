@@ -32,7 +32,7 @@ function initMap() {
         })
     }
 
-    newMarker({lat: parseFloat(branches[0].lat), lng: parseFloat(branches[0].lng), index: 0});
-    newMarker({lat: parseFloat(branches[1].lat), lng: parseFloat(branches[1].lng), index: 1});
-    newMarker({lat: parseFloat(branches[2].lat), lng: parseFloat(branches[2].lng), index: 2});
+    if(branches) branches.forEach((data, index) => {
+        newMarker({lat: parseFloat(data.lat), lng: parseFloat(data.lng), index: index});
+    })
 }

@@ -1,18 +1,18 @@
-<header class="h-100 p-5 bg-dark text-light d-flex align-items-center text-center">
+<header class="h-100 py-5 px-2 bg-dark text-light d-flex align-items-center text-center">
     <h1 class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
         Officia, nobis sint iste illum eligendi vero?</h1>
 </header>
-<main>
+<main style>
     
-    <div class="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+    <div class="h-100vh w-100 d-flex flex-column align-items-center justify-content-center">
         <!-- here will be rendered the map -->
-        <div id="googleMap" class="h-100 col-11 col-md-8 p-0 position-relative bottom-25"></div>
+        <div id="googleMap" class="h-100 col-11 col-md-8 p-0 position-relative bottom-25 bg-primary"></div>
         <small class="mt-2 position-relative bottom-25">select a location to see the details</small> 
     </div>
 
     <!--  creates locations to be displayed when their marker is selected in the map -->
     <div id="sucursales">
-        <%  for(let i = 0; i < branches.length; i++){ %>
+        <%  if(branches) for(let i = 0; i < branches.length; i++){ %>
 
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-center bg-primary w-100 p-5 d-none">
                 <img class="col-10 col-md-6 rounded-3" src=<%- branches[i].img %> alt="">
